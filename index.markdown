@@ -4,5 +4,3 @@
 
 layout: home
 ---
-
-![image](images/reece.jpg)

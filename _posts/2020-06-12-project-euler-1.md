@@ -1,5 +1,6 @@
 ---
 layout: post
+mathjax: true
 title:  "Project Euler Problem #1"
 date:   2020-06-12 16:46:09 -0700
 categories: jekyll update
