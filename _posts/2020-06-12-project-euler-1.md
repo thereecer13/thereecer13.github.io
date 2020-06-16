@@ -19,7 +19,7 @@ print(sum([i for i in range(3, 1000) if i % 3 == 0 or i % 5 == 0]))
 233168
 ```
 
-Let's expand this problem a little further. What if instead of finding the sum of multiples below 1000, we find the sum of multiples below any natural number N? The time complexity of the above is O(n), so it can get quite slow at large N. However, there is another approach. The sum of all integers from 1 to n can be calculated using the formula:
+Let's expand this problem a little further. What if instead of finding the sum of multiples below 1000, we find the sum of multiples below any natural number $N$? The time complexity of the above is O(n), so it can get quite slow at large $N$. However, there is another approach. The sum of all integers from 1 to n can be calculated using the formula:
 
 $$ 1 + 2 + 3 + \cdots + n = \frac{n(n+1)} {2} $$
 
@@ -27,7 +27,7 @@ We can see that the above is equivalent to calculating the sum of all multiples 
 
 $$ 3 + 6 + 9 + \cdots + 3n = 3 \times (1 + 2 + 3 + \cdots + n) = 3 \times \frac{n(n+1)} {2} $$
 
-Going back to the Project Euler question, if $3n$ represents a multiple of 3, then the value of $n$ should be the largest integer that satisfies $3n < N$. If we do the same with 5, then the answer can be obtained by adding together the individual sum of multiples (below 1000) for both 3 and 5. But wait! Doing this would double count all shared multiples between 3 and 5. To fix this, we subtract all multiples of the lowest common multiple of 3 and 5, i.e. 15, below N from the sum of the multiples of 3 and 5 below N. 
+Going back to the Project Euler question, if $3n$ represents a multiple of 3, then the value of $n$ should be the largest integer that satisfies $3n < N$. If we do the same with 5, then the answer can be obtained by adding together the individual sum of multiples (below 1000) for both 3 and 5. But wait! Doing this would double count all shared multiples between 3 and 5. To fix this, we subtract all multiples of the lowest common multiple of 3 and 5, i.e. 15, below $N$ from the sum of the multiples of 3 and 5 below $N$. 
 
 ```python
 N = 1000  # Can be any positive integer
@@ -40,9 +40,9 @@ print(sumOfMult(3, N) + sumOfMult(5, N) - sumOfMult(15, N))
 233168
 ```
 
-Now we can change the value of N to whatever positive integer value we want. Note that the above runs in constant time because changing the value of N only changes the values in the equation in the `sumOfMult()` function. 
+Now we can change the value of `N` to whatever positive integer value we want. Note that the above runs in constant time because changing the value of `N` only changes the values in the equation discussed above.
 
-What if we expanded this question even further by trying to find the sum of the multiples of any number of integers? We must now think of what happens when we consider other numbers besides 3 and 5. We employ the same idea as before, where we sum the multiples of all input integers, and subtract the multiples of their lowest common multiples. Here I create a separate function, `findCommonMults`, that finds all the lowest common multiples between the input integers.
+What if we expanded this question even further by trying to find the sum of the multiples of any number of integers such that the multiples are below `N`? We must now think of what happens when we consider other numbers besides 3 and 5. We employ the same idea as before, where we sum the multiples of all input integers, and subtract the multiples of their lowest common multiples. Here I create a separate function, `findCommonMults`, that finds all the lowest common multiples between the input integers.
 
 ```python
 arr = [3, 5] # Input array of integers
@@ -68,7 +68,7 @@ print(ans)
 233168
 ```
 
-Now we can feed our script any number of input integers in an array as well as the maximum number N that the multiples must be below. That's all for now!	
+Now we can feed our script any number of input integers in an array as well as the maximum number `N` that the multiples must be below. That's all for now!	
 
 *** 
 
