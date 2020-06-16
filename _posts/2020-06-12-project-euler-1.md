@@ -10,20 +10,16 @@ For this blog post I want to explore the first [Project Euler][project-euler] pr
 >
 > Find the sum of all the multiples of 3 or 5 below 1000.
 
-One way to solve this is to iterate through all numbers from 3 to 1000, figure out which numbers are divisible by 3 or 5, and sum up those numbers. This can be written in Python3 as:
+We can solve this simply by iterating through all numbers from 3 to 1000, figuring out which numbers are divisible by 3 or 5, and summing up those numbers. This can be written as a one liner in Python 3:
 
 ```python
-tot = 0
-for i in range(3, 1000):
-	if i % 3 == 0 or i % 5 == 0:
-		tot += i
-print(tot)
+print(sum([i for i in range(3, 1000) if i % 3 == 0 or i % 5 == 0]))
 ```
 ```python
 233168
 ```
 
-There is another solution. The sum of all integers from 1 to n can be calculated using the formula:
+Let's expand this problem a little further. What if instead of finding the sum of multiples below 1000, we find the sum of multiples below any natural number N? The time complexity of the above is O(n), so it can get quite slow at large N. However, there is another approach. The sum of all integers from 1 to n can be calculated using the formula:
 
 $$ 1 + 2 + 3 + \cdots + n = \frac{n(n+1)} {2} $$
 
@@ -31,19 +27,52 @@ We can see that the above is equivalent to calculating the sum of all multiples 
 
 $$ 3 + 6 + 9 + \cdots + 3n = 3 \times (1 + 2 + 3 + \cdots + n) = 3 \times \frac{n(n+1)} {2} $$
 
-If $3n$ represents a multiple of 3, then the value of $n$ should be the largest integer that satisfies $3n < 1000$, which means that $n$ should be 333. We can do the same for 5 and find that the value for $n$ should be 199. One thing we need to do is make sure that we aren't double counting. Since 3 and 5 both go into 15, this means that we must subtract all multiples of 15 that are less than 1000. Thus we can calculate the answer by doing the following calculation: 
-
-$$ 3 \times \frac{333(333+1)} {2} + 5 \times \frac{199(199+1)} {2} - 15 \times \frac{66(66+1)} {2} $$
+Going back to the Project Euler question, if $3n$ represents a multiple of 3, then the value of $n$ should be the largest integer that satisfies $3n < N$. If we do the same with 5, then the answer can be obtained by adding together the individual sum of multiples (below 1000) for both 3 and 5. But wait! Doing this would double count all shared multiples between 3 and 5. To fix this, we subtract all multiples of the lowest common multiple of 3 and 5, i.e. 15, below N from the sum of the multiples of 3 and 5 below N. 
 
 ```python
-threes = 3 * (333 * (333 + 1) // 2)
-fives = 5 * (199 * (199 + 1) // 2)
-fifteens = 15 * (66 * (66 + 1) // 2)
-print(threes + fives - fifteens)
+N = 1000  # Can be any positive integer
+def sumOfMult(base, max_n):
+	max_mult = (max_n - 1) // base
+	return(base * (max_mult * (max_mult + 1)) // 2)
+print(sumOfMult(3, N) + sumOfMult(5, N) - sumOfMult(15, N))
 ```
 ```python
 233168
 ```
 
+Now we can change the value of N to whatever positive integer value we want. Note that the above runs in constant time because changing the value of N only changes the values in the equation in the `sumOfMult()` function. 
+
+What if we expanded this question even further by trying to find the sum of the multiples of any number of integers? We must now think of what happens when we consider other numbers besides 3 and 5. We employ the same idea as before, where we sum the multiples of all input integers, and subtract the multiples of their lowest common multiples. Here I create a separate function, `findCommonMults`, that finds all the lowest common multiples between the input integers.
+
+```python
+arr = [3, 5] # Input array of integers
+N = 1000
+
+def sumOfMult(base, max_n):
+    max_mult = (max_n - 1) // base
+    return(base * (max_mult * (max_mult + 1)) // 2)
+
+# Find common multiples
+def findCommonMults(array):
+    mult_arr = []
+    for i in range(len(array) - 1):
+        for j in range(i + 1, len(array)):
+            mult_arr.append(array[i] * array[j])
+    return mult_arr
+mult_arr = findCommonMults(arr)
+
+ans = sum([sumOfMult(i, N) for i in arr]) - sum([sumOfMult(j, N) for j in mult_arr])
+print(ans)
+```
+```python
+233168
+```
+
+Now we can feed our script any number of input integers in an array as well as the maximum number N that the multiples must be below. That's all for now!	
+
+*** 
+
+##### Please send comments, questions, or concerns to my email. The code for everything in this post can be found on my [GitHub][github] page.
 
 [project-euler]: https://projecteuler.net/
+[github]: https://github.com/thereecer13
