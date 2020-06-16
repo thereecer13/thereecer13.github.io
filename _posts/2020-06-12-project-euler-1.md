@@ -27,12 +27,12 @@ We can see that the above is equivalent to calculating the sum of all multiples 
 
 $$ 3 + 6 + 9 + \cdots + 3n = 3 \times (1 + 2 + 3 + \cdots + n) = 3 \times \frac{n(n+1)} {2} $$
 
-Going back to the Project Euler question, if $3n$ represents a multiple of 3, then the value of $n$ should be the largest integer that satisfies $3n < N$. If we do the same with 5, then the answer can be obtained by adding together the individual sum of multiples (below 1000) for both 3 and 5. But wait! Doing this would double count all shared multiples between 3 and 5. To fix this, we subtract all multiples of the lowest common multiple of 3 and 5, i.e. 15, below $N$ from the sum of the multiples of 3 and 5 below $N$. 
+Going back to the Project Euler question, if $3n$ represents a multiple of 3, then the value of $n$ should be the largest integer that satisfies $3n < N$. If we do the same with 5, then the answer can be obtained by adding together the individual sum of multiples (below $N$) for both 3 and 5. But wait! Doing this would double count all shared multiples between 3 and 5. To fix this, we subtract all multiples of the lowest common multiple of 3 and 5, i.e. 15, below $N$ from the sum of the multiples of 3 and 5 below $N$. 
 
 ```python
 def sumOfMult(base, max_n):
 	max_mult = (max_n - 1) // base
-	return(base * (max_mult * (max_mult + 1)) // 2)
+	return(base * (max_mult * (max_mult + 1)) // 2) # Formula is applied here
 
 
 N = 1000  # Can be any positive integer
@@ -44,32 +44,32 @@ print(sumOfMult(3, N) + sumOfMult(5, N) - sumOfMult(15, N))
 
 Now we can change the value of `N` to whatever positive integer value we want. Note that the above runs in constant time because changing the value of `N` only changes the values in the equation discussed above.
 
-What if we expanded this question even further by trying to find the sum of the multiples of any number of integers such that the multiples are below `N`? We must now think of what happens when we consider other numbers besides 3 and 5. We employ the same idea as before, where we sum the multiples of all input integers, and subtract the multiples of their lowest common multiples. Here I create a separate function, `findCommonMults`, that finds all the lowest common multiples between the input integers:
+What if we expanded this question even further by trying to find the sum of the multiples of any number of integers such that the multiples are below $N$? We must now think of what happens when we consider other numbers besides 3 and 5. We employ the same idea as before, where we sum the multiples of all input integers, and subtract the multiples of their lowest common multiples. Here I create a separate function, `findCommonMults`, that finds all the lowest common multiples between the input integers, given a list of integers:
 
 ```python
 # Find common multiples
-def findCommonMults(array):
-    mult_arr = []
-    for i in range(len(array) - 1):
-        for j in range(i + 1, len(array)):
-            mult_arr.append(array[i] * array[j])
-    return mult_arr
+def findCommonMults(int_list):
+    mult_list = []
+    for i in range(len(int_list) - 1):
+        for j in range(i + 1, len(int_list)):
+            mult_list.append(int_list[i] * int_list[j])
+    return mult_list
 ```
 
 Now combining the `sumOfMult` and `findCommonMults` functions:
 
 ```python
 N = 1000
-arr = [3, 5] # Input array of integers
-mult_arr = findCommonMults(arr)
-ans = sum([sumOfMult(i, N) for i in arr]) - sum([sumOfMult(j, N) for j in mult_arr])
+int_list = [3, 5] # Input array of integers
+mult_list = findCommonMults(int_list)
+ans = sum([sumOfMult(i, N) for i in int_list]) - sum([sumOfMult(j, N) for j in mult_list])
 print(ans)
 ```
 ```python
 233168
 ```
 
-Now we can feed our script any number of input integers in an array as well as the maximum number `N` that the multiples must be below. That's all for now!	
+Now we can feed our script any number of input integers in a list as well as the maximum number $N$ that the multiples must be below. That's all for now!	
 
 *** 
 
