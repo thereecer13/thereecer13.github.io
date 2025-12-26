@@ -1,3 +1,3 @@
 # thereecer13.github.io
 
-Contains the files related to my personal blog, Reece's Pieces. 
+Contains the files related to my personal website. 
