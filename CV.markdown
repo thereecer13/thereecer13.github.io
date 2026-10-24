@@ -10,7 +10,19 @@ B.A. in Chemical and Physical Biology, Minor in Music, Cum Laude
 **Stanford University School of Medicine** (2017-2025)    
 PhD in Cancer Biology
 
-### Research Experience
+### Work Experience
+
+**Anthropic** (June 2026 – September 2026)    
+*STEM Fellow*, San Francisco, CA
+- Built long-horizon evaluations of AI agents' reasoning in biology and identified key failure modes
+- Designed RL environments for improving agent capabilities in biological research tasks
+- Ran automated agentic research loops in which agents design models and iteratively revise their own modeling
+approach based on their analyses
+- Red-teamed a helpful-only model, probing whether it would give meaningful assistance toward biological misuse
+
+**Mercor/Handshake AI** (June 2026 – September 2026)    
+*Biology Domain Expert, AI Evaluation (Contract)*, Remote
+- Wrote expert annotations and structured critiques of LLM biology outputs for a human-in-the-loop evaluation pipeline, scoring scientific accuracy and reasoning quality
 
 **Illumina, Inc.** (May 2025 – October 2025)    
 *Senior Scientist*, Foster City, CA
