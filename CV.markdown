@@ -20,7 +20,7 @@ PhD in Cancer Biology
 approach based on their analyses
 - Red-teamed a helpful-only model, probing whether it would give meaningful assistance toward biological misuse
 
-**Mercor/Handshake AI** (June 2026 – September 2026)    
+**Mercor/Handshake AI** (March 2026 – April 2026)    
 *Biology Domain Expert, AI Evaluation (Contract)*, Remote
 - Wrote expert annotations and structured critiques of LLM biology outputs for a human-in-the-loop evaluation pipeline, scoring scientific accuracy and reasoning quality
 
@@ -95,6 +95,9 @@ approach based on their analyses
 - Co-President – Harvard College Electronic Music Collective (8/2016-5/2017)
 
 ### Completed Coursework
+BlueDot Impact
+- AI Technical Safety Course
+
 Stanford University
 - STATS 216 (Introduction to Statistical Learning)
 - STATS 160 (Introduction to Statistical Methods)
