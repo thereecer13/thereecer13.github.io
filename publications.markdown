@@ -5,7 +5,7 @@ permalink: /publications/
 ---
 Here is a list of my publications:
 
-1. [**High-content CRISPR activation screens identify synthetically lethal RNA-based mechanisms to sensitize cancer cells to targeted T cell cytotoxicity**] (https://www.nature.com/articles/s41588-026-02561-7)  
+1. [**High-content CRISPR activation screens identify synthetically lethal RNA-based mechanisms to sensitize cancer cells to targeted T cell cytotoxicity**](https://www.nature.com/articles/s41588-026-02561-7)  
 **Akana, R.**, Yoe, J., Laveroni, O., Sun, C., Kim, YM., Jerby, L.  (2026)  
 *Nature Genetics*
 
