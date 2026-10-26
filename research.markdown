@@ -5,6 +5,13 @@ permalink: /research/
 ---
 # AI Safety Research
 
+<div style="position: relative; width: 100%; max-width: 960px; aspect-ratio: 16 / 9;">
+  <iframe src="https://youtu.be/s2dTi_drLmo"
+          title="The Evidence Is in the Votes"
+          style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 8px;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen loading="lazy"></iframe>
+</div>
 
 # PhD Research
 ### 1. Understanding genetic regulators of tumor cell sensitivity to T cell killing
