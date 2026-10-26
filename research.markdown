@@ -6,7 +6,7 @@ permalink: /research/
 # AI Safety Research
 
 <div style="position: relative; width: 100%; max-width: 960px; aspect-ratio: 16 / 9;">
-  <iframe src="https://youtu.be/s2dTi_drLmo"
+  <iframe src="https://www.youtube-nocookie.com/embed/s2dTi_drLmo?rel=0"
           title="The Evidence Is in the Votes"
           style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 8px;"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
