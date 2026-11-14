@@ -37,7 +37,9 @@ header_pages:
   - index.markdown
   - research.markdown
   - publications.markdown
+  - blog.markdown
   - CV.markdown
+permalink: /blog/:title/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
