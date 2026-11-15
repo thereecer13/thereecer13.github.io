@@ -20,8 +20,7 @@
 
 title: Reece Villarin Akana
 description: >- # this means to ignore newlines until "baseurl:"
-  If you have any questions or comments, please feel free to reach out to me via LinkedIn. 
-  This website was last updated on 2/24/2026. 
+  If you have any questions or comments, please feel free to reach out to me via LinkedIn.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://reeceakana.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 linkedin_username: reece-akana-83421713a
