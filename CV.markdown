@@ -68,6 +68,10 @@ approach based on their analyses
 - Built large radio telescopes to detect solar and Jovian bursts
 - Analyzed and presented measurements of the galaxy rotation curve for the Milky Way
 
+### Publications
+- **Akana, R.**, Yoe, J., Laveroni, O., Sun, C., Kim, YM., Jerby, L. (2026). [High-content CRISPR activation screens identify synthetically lethal RNA-based mechanisms to sensitize cancer cells to targeted T cell cytotoxicity](https://www.nature.com/articles/s41588-026-02561-7). *Nature Genetics*
+- Kim, YM., Tsai, M., Sun, C., Laveroni, O., **Akana, R.**, Frombach, K., Jerby, L. (2026). [Engineering NK and T cells with metabolite-sensing receptors to target solid tumors](https://www.nature.com/articles/s41590-026-02473-y). *Nature Immunology*
+
 ### Posters/Presentations
 - American Association for Cancer Research Annual Meeting, San Diego (April, 2024 – poster)
 - Biohub SF Inter-lab Confab, San Francisco (2022-2023 – posters)
